@@ -364,11 +364,11 @@ label.alan input:focus,label.alan textarea:focus,label.alan select:focus{border-
 @media (max-width:560px){.logo-kutu{height:30px}}
 
 /* Hakkımızda: rakamlar ve hikâye */
-.rakamlar{list-style:none;margin:0 0 clamp(56px,7vw,96px);padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--murekkep)}
-.rakamlar li{padding:24px 20px 0 0;display:flex;flex-direction:column;gap:8px}
-.rakamlar b{font:400 clamp(42px,4.4vw,64px)/1 var(--serif);white-space:nowrap;letter-spacing:-.03em;color:var(--bordo)}
-.rakamlar span{font-size:15px;color:var(--soluk);max-width:24ch}
-@media (max-width:860px){.rakamlar{grid-template-columns:1fr 1fr;gap:26px 0}}
+.rakamlar{list-style:none;margin:0 auto clamp(56px,7vw,96px);padding:0;display:flex;justify-content:center;text-align:center}
+.rakamlar li{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:28px;position:relative}
+.rakamlar li::before{content:"";position:absolute;top:0;left:50%;width:48px;height:1px;background:var(--bordo);transform:translateX(-50%)}
+.rakamlar b{font:400 clamp(64px,6vw,96px)/1 var(--serif);letter-spacing:-.03em;color:var(--bordo)}
+.rakamlar span{font-size:15px;color:var(--soluk);letter-spacing:.02em}
 .hk-govde{max-width:760px;margin:0 auto}
 .hk-bolum{padding:clamp(36px,4vw,56px) 0;border-top:1px solid var(--cizgi)}
 .hk-bolum:first-child{border-top:0;padding-top:0}
