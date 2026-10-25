@@ -600,3 +600,38 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .mk-kapilar .kapi:nth-child(4) .kapi-yazi{right:44%}
 .mk-kapilar .kapi:nth-child(5) .kapi-yazi{right:48%}
 @media (max-width:560px){.mk-kapilar .kapi:nth-child(4) .kapi-yazi{right:40%}}
+/* Markalar · firma logoları */
+.mk-logolar{list-style:none;margin:clamp(36px,4vw,56px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.2vw,18px)}
+.mk-logolar a{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:clamp(20px,2.2vw,30px) 16px clamp(18px,2vw,24px);border-radius:18px;background:#FBF8F3;border:1px solid rgba(30,22,18,.07);text-decoration:none;color:var(--murekkep);height:100%;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.mk-logolar a:hover{transform:translateY(-3px);box-shadow:0 22px 44px -32px rgba(23,16,14,.45)}
+.mk-l-img{height:clamp(84px,8vw,112px);width:100%;display:grid;place-items:center;margin-bottom:10px}
+.mk-l-img img{max-height:100%;max-width:min(100%,230px);object-fit:contain}
+.mk-l-demlesene img{max-width:min(100%,240px);max-height:44px}
+.mk-l-fenille img{max-width:min(100%,210px)}
+.mk-logolar b{font:400 clamp(18px,1.5vw,22px)/1.15 var(--serif)}
+.mk-l-alt{font-size:13px;color:var(--soluk);line-height:1.4}
+.mk-logo{display:block;max-height:64px;max-width:220px;width:auto;height:auto;object-fit:contain;margin-bottom:22px}
+.mk-logo-caferoglu{max-height:96px}
+.mk-logo-bean{max-height:84px}
+.mk-logo-demlesene{max-height:34px}
+.mk-baslik .mk-logo + .no{margin-top:4px}
+@media (max-width:900px){.mk-logolar{grid-template-columns:1fr 1fr}}
+/* Markalar · firma logoları */
+.mk-logolar{list-style:none;margin:clamp(36px,4vw,56px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.2vw,18px)}
+.mk-logolar a{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:clamp(20px,2.2vw,30px) 16px clamp(18px,2vw,24px);border-radius:18px;background:#FBF8F3;border:1px solid rgba(30,22,18,.07);text-decoration:none;color:var(--murekkep);height:100%;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.mk-logolar a:hover{transform:translateY(-3px);box-shadow:0 22px 44px -32px rgba(23,16,14,.45)}
+.mk-l-img{height:clamp(84px,8vw,112px);width:100%;display:grid;place-items:center;margin-bottom:10px}
+.mk-l-img img{max-height:100%;max-width:min(100%,230px);object-fit:contain}
+.mk-l-demlesene img{max-width:min(100%,240px);max-height:44px}
+.mk-l-fenille img{max-width:min(100%,220px);max-height:80px}
+.mk-logolar b{font:400 clamp(18px,1.5vw,22px)/1.15 var(--serif)}
+.mk-l-alt{font-size:13px;color:var(--soluk);line-height:1.4}
+.mk-logo{display:block;max-height:64px;max-width:220px;width:auto;height:auto;object-fit:contain;margin-bottom:22px}
+.mk-logo-caferoglu{max-height:110px}
+.mk-logo-bean{max-height:84px}
+.mk-logo-demlesene{max-height:34px}
+@media (max-width:900px){.mk-logolar{grid-template-columns:1fr 1fr}}
+.mk-l-img{position:relative}
+.mk-l-img img{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain}
+.mk-l-demlesene img{inset:22% 4%;width:92%;height:56%}
+.mk-l-fenille img{inset:8% 4%;width:92%;height:84%}
