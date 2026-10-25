@@ -635,3 +635,20 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .mk-l-img img{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain}
 .mk-l-demlesene img{inset:22% 4%;width:92%;height:56%}
 .mk-l-fenille img{inset:8% 4%;width:92%;height:84%}
+/* Ana sayfa · marka logo şeridi */
+.logo-serit{padding:clamp(36px,4.5vw,64px) 0;border-top:1px solid var(--cizgi);border-bottom:1px solid var(--cizgi);background:#FBF8F3}
+.logo-serit .kap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(20px,3vw,48px)}
+.logo-serit ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;gap:clamp(16px,3vw,48px)}
+.logo-serit li a{display:grid;place-items:center;height:clamp(56px,6vw,80px);opacity:.92;transition:opacity .3s,transform .3s}
+.logo-serit li a:hover{opacity:1;transform:translateY(-2px)}
+.logo-serit img{max-height:100%;max-width:100%;object-fit:contain}
+.logo-serit .ls-demlesene{max-height:34%}
+.logo-serit .ls-fenille{max-height:82%}
+.ls-tum{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--bordo);text-decoration:none;white-space:nowrap}
+.ls-tum svg{width:14px;height:14px}
+@media (max-width:900px){.logo-serit .kap{grid-template-columns:1fr}.logo-serit ul{grid-template-columns:1fr 1fr;gap:22px 28px}.ls-tum{justify-self:start}}
+.logo-serit li a{position:relative}
+.logo-serit img{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain}
+.logo-serit img.ls-demlesene{inset:30% 0;height:40%}
+.logo-serit img.ls-fenille{inset:6% 0;height:88%}
+.mk-acik::after{display:none}
