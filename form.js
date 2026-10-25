@@ -18,6 +18,7 @@
   const q = new URLSearchParams(location.search);
   const on = (ad, anahtar) => { const b = f.querySelector(`[data-sec="${ad}"] [data-k="${anahtar}"]`); if (b) b.click(); };
   if (q.get('talep')) on('talep', q.get('talep')); if (q.get('urun')) on('urun', q.get('urun'));
+  if (q.get('miktar') && $('#miktar')) $('#miktar').value = q.get('miktar'); if (q.get('not') && $('#not')) $('#not').value = q.get('not');
   f.addEventListener('input', ozet);
   function ozet() {
     const L = [];
