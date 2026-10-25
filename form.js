@@ -28,7 +28,7 @@
     if (v('miktar')) L.push((EN ? 'Monthly volume: ' : 'Aylık miktar: ') + v('miktar'));
     if (v('ad')) L.push(v('ad') + (v('firma') ? ' · ' + v('firma') : ''));
     const u = document.getElementById('ozet-liste');
-    u.innerHTML = ''; (L.length ? L : [EN ? 'Your choices will appear here.' : 'Seçimlerin burada görünecek.']).forEach(t => { const li = document.createElement('li'); li.textContent = t; u.appendChild(li); });
+    u.innerHTML = ''; (L.length ? L : [EN ? 'Your choices will appear here.' : 'Seçimleriniz burada görünecek.']).forEach(t => { const li = document.createElement('li'); li.textContent = t; u.appendChild(li); });
   }
   ozet();
   f.addEventListener('submit', e => {
