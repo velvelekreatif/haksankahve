@@ -140,3 +140,27 @@ document.documentElement.classList.add('js');
   [].forEach.call(b.querySelectorAll('.hz-geri'),function(a){a.addEventListener('click',function(ev){ev.preventDefault(); b.scrollIntoView({behavior:'smooth',block:'start'});});});
   var h=location.hash.slice(1); if(h.indexOf('ur-')===0) setTimeout(function(){ac(h,true);},60);
 })();
+
+/* Yeşil çekirdek · menşe atlası: kıta filtresi ve harita noktaları */
+(function(){
+  var b=document.querySelector('.mn-b'); if(!b) return;
+  var dug=[].slice.call(b.querySelectorAll('.mn-filtre button')), kart=[].slice.call(b.querySelectorAll('.mn-k')), nok=[].slice.call(b.querySelectorAll('.mn-nokta'));
+  function sec(k){
+    dug.forEach(function(d){d.setAttribute('aria-pressed',d.getAttribute('data-kita')===k?'true':'false');});
+    kart.forEach(function(c){c.hidden=!(k==='hepsi'||c.getAttribute('data-kita')===k);});
+    nok.forEach(function(n){n.classList.toggle('soluk',!(k==='hepsi'||n.getAttribute('data-kita')===k));});
+  }
+  dug.forEach(function(d){d.addEventListener('click',function(){sec(d.getAttribute('data-kita'));});});
+  function vurgula(slug){
+    var c=document.getElementById('m-'+slug); if(!c) return;
+    if(c.hidden) sec('hepsi');
+    c.scrollIntoView({behavior:'smooth',block:'center'});
+    c.classList.remove('vurgu'); void c.offsetWidth; c.classList.add('vurgu');
+  }
+  nok.forEach(function(n){n.addEventListener('click',function(ev){ev.preventDefault(); vurgula(n.getAttribute('data-m'));});});
+  kart.forEach(function(c){
+    var s=c.id.slice(2);
+    c.addEventListener('mouseenter',function(){nok.forEach(function(n){n.classList.toggle('aktif',n.getAttribute('data-m')===s);});});
+    c.addEventListener('mouseleave',function(){nok.forEach(function(n){n.classList.remove('aktif');});});
+  });
+})();
