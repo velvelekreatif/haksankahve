@@ -122,3 +122,21 @@ document.documentElement.classList.add('js');
   const io = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { if (v.preload !== 'auto') { v.preload = 'auto'; v.load(); } v.play().catch(() => {}); } else v.pause(); }), { threshold: .2 });
   document.querySelectorAll('.saha video, .hk-video video, .ziyaret video').forEach(v => { v.muted = true; io.observe(v); });
 })();
+
+/* Üretim · fason hizmet kartları: tıklanınca ayrıntı paneli */
+(function(){
+  var b=document.querySelector('.hz-b'); if(!b) return;
+  document.documentElement.classList.add('hz-js');
+  var kartlar=[].slice.call(b.querySelectorAll('.hz-k')), paneller=[].slice.call(b.querySelectorAll('.hz-p'));
+  function ac(id,kaydir){
+    var p=document.getElementById(id); if(!p) return;
+    paneller.forEach(function(x){x.classList.toggle('acik',x===p); var v=x.querySelector('video'); if(v&&x!==p) v.pause();});
+    kartlar.forEach(function(k){var a=k.getAttribute('data-hz')===id; k.classList.toggle('secili',a); k.setAttribute('aria-expanded',a?'true':'false');});
+    var v=p.querySelector('video'); if(v){v.preload='auto'; var s=v.play(); if(s&&s.catch) s.catch(function(){});}
+    if(kaydir) p.scrollIntoView({behavior:'smooth',block:'start'});
+    if(history.replaceState) history.replaceState(null,'','#'+id);
+  }
+  kartlar.forEach(function(k){k.setAttribute('aria-expanded','false'); k.addEventListener('click',function(ev){ev.preventDefault(); ac(k.getAttribute('data-hz'),true);});});
+  [].forEach.call(b.querySelectorAll('.hz-geri'),function(a){a.addEventListener('click',function(ev){ev.preventDefault(); b.scrollIntoView({behavior:'smooth',block:'start'});});});
+  var h=location.hash.slice(1); if(h.indexOf('ur-')===0) setTimeout(function(){ac(h,true);},60);
+})();

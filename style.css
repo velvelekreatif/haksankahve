@@ -654,3 +654,40 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .mk-acik::after{display:none}
 .mk-b .mk-logolar{margin-top:0}
 .mk-b{padding-top:clamp(40px,5vw,72px)}
+/* Üretim · fason hizmetler */
+.hz-b{scroll-margin-top:84px}
+.hz-kartlar{margin-top:clamp(36px,4vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,20px)}
+.hz-k{position:relative;display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:#FBF8F3;border:1px solid rgba(30,22,18,.08);color:var(--murekkep);text-decoration:none;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s,border-color .3s}
+.hz-k:hover{transform:translateY(-4px);box-shadow:0 28px 54px -36px rgba(23,16,14,.5)}
+.hz-k.secili{border-color:var(--bordo);box-shadow:0 0 0 2px var(--bordo)}
+.hz-g{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--is)}
+.hz-g img{width:100%;height:100%;object-fit:cover;object-position:62% 50%;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.hz-k:hover .hz-g img{transform:scale(1.05)}
+.hz-y{display:flex;flex-direction:column;gap:5px;padding:20px 72px 22px 22px}
+.hz-y .no{font:italic 400 15px/1 var(--serif);color:var(--bordo)}
+.hz-y b{font:400 clamp(24px,2.1vw,32px)/1.08 var(--serif);letter-spacing:-.015em;font-weight:400}
+.hz-y span:last-child{font-size:14.5px;color:#5A4E45;line-height:1.4}
+.hz-ok{position:absolute;right:20px;bottom:22px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(30,22,18,.2);display:grid;place-items:center;transition:background .3s,color .3s,border-color .3s,transform .3s}
+.hz-ok svg{width:15px;height:15px;transform:rotate(90deg)}
+.hz-k:hover .hz-ok,.hz-k.secili .hz-ok{background:var(--bordo);border-color:var(--bordo);color:var(--kul)}
+.hz-paneller{margin-top:clamp(18px,2vw,28px)}
+.hz-p{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,64px);align-items:start;padding:clamp(18px,2.4vw,32px);margin-top:clamp(14px,1.6vw,22px);border-radius:24px;background:#FBF8F3;border:1px solid rgba(30,22,18,.08);scroll-margin-top:100px}
+.hz-js .hz-p{display:none}
+.hz-js .hz-p.acik{display:grid;animation:hzAc .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes hzAc{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hz-m{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:var(--is);position:sticky;top:110px}
+.hz-m img,.hz-m video{width:100%;height:100%;object-fit:cover;object-position:62% 50%;display:block}
+.hz-icerik{padding:clamp(4px,1vw,14px) 0}
+.hz-icerik .ust-etiket .no{font:italic 400 15px/1 var(--serif);letter-spacing:0;color:var(--bordo);margin-right:6px}
+.hz-icerik h3{font:400 clamp(34px,3.4vw,52px)/1.02 var(--serif);letter-spacing:-.025em;margin:12px 0 10px}
+.hz-soz{font:italic 400 clamp(20px,1.7vw,26px)/1.25 var(--serif);color:var(--bordo);margin-bottom:16px}
+.hz-par{color:#4A4038;max-width:60ch}
+.hz-neler-b{margin:26px 0 12px;font:500 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--soluk)}
+.hz-neler{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.hz-neler li{position:relative;padding-left:22px;font-size:15px;line-height:1.4;color:var(--murekkep)}
+.hz-neler li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:2px;border-radius:2px;background:var(--bordo)}
+.hz-ornek{font-size:14px;color:var(--soluk);padding:14px 0 22px;border-top:1px solid var(--cizgi)}
+.hz-icerik .dugme.cizgi{color:var(--murekkep);border-color:rgba(30,22,18,.3)}
+.hz-geri{display:inline-block;margin-top:20px;font-size:14px;color:var(--soluk);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:980px){.hz-kartlar{grid-template-columns:1fr 1fr}.hz-p{grid-template-columns:1fr}.hz-m{position:relative;top:0}}
+@media (max-width:560px){.hz-kartlar{gap:10px}.hz-k{border-radius:14px}.hz-y{padding:12px 12px 14px}.hz-y b{font-size:20px}.hz-y span:last-child{font-size:12.5px}.hz-ok{display:none}.hz-neler{grid-template-columns:1fr}.hz-p{padding:14px;border-radius:18px}}
