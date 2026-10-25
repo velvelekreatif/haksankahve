@@ -396,3 +396,12 @@ label.alan input:focus,label.alan textarea:focus,label.alan select:focus{border-
 .halka,.yesil-b,.dunya-acik{background:var(--kul2)}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .2  0 0 0 0 .15  0 0 0 0 .1  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 @media (prefers-reduced-motion:reduce){body::after{display:none}}
+/* Sahadan: kendi görüntülerimiz */
+.saha-b{background:var(--kul)}
+.saha{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.4vw,18px)}
+.saha-k{margin:0;position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:var(--is)}
+.saha-k video{width:100%;height:100%;object-fit:cover;display:block}
+.saha-k::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(13,10,8,.75))}
+.saha-k figcaption{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;color:var(--kul);font:400 19px/1.2 var(--serif)}
+.saha-k figcaption span{display:block;font:600 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--bordo-ac);margin-bottom:6px}
+@media (max-width:860px){.saha{grid-template-columns:1fr 1fr}}
