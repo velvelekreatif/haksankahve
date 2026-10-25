@@ -745,3 +745,5 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .mn-liste .dugme.cizgi{color:var(--kul);border-color:rgba(244,239,231,.4)}
 @media (max-width:1000px){.mn-kartlar{grid-template-columns:1fr 1fr}.mn-liste{grid-template-columns:1fr}}
 @media (max-width:620px){.mn-kartlar{grid-template-columns:1fr}.mn-harita{padding:10px;border-radius:16px}.mn-nokta text{font-size:4.2px;stroke-width:1.3}.mn-nokta:not(.mn-one) text{display:none}.mn-filtre{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-right:-20px;padding-right:20px}.mn-filtre button{white-space:nowrap}}
+.hz-m.hz-dikey{aspect-ratio:4/5;max-height:78vh}
+.hz-m.hz-dikey video{object-position:50% 50%}
