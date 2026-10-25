@@ -652,3 +652,5 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .logo-serit img.ls-demlesene{inset:30% 0;height:40%}
 .logo-serit img.ls-fenille{inset:6% 0;height:88%}
 .mk-acik::after{display:none}
+.mk-b .mk-logolar{margin-top:0}
+.mk-b{padding-top:clamp(40px,5vw,72px)}
