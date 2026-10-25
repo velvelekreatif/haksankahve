@@ -751,3 +751,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .dunya .arka video,.dunya .arka img{transform:scale(1.35) translateX(12%);filter:saturate(.72) brightness(.92)}
 .dunya::after{background:linear-gradient(90deg,rgba(13,10,8,.82) 0%,rgba(13,10,8,.5) 42%,rgba(13,10,8,.06) 78%)}
 @media (max-width:560px){.dunya::after{background:linear-gradient(180deg,rgba(13,10,8,.6),rgba(13,10,8,.88))}}
+/* Ana sayfa · tam genişlik video girişi */
+.giris-tam{min-height:100vh;min-height:100svh}
+.giris-tam h1{max-width:13ch;font-size:clamp(48px,6.4vw,104px)}
+.giris-tam h1 em{color:#EBC9BC}
+.giris-tam .bant-p{max-width:56ch}
+.giris-tam .kahraman-dugmeler{margin-top:32px}
+.giris-tam .dugme.cizgi{color:var(--kul);border-color:rgba(244,239,231,.5)}
