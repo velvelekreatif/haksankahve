@@ -120,5 +120,5 @@ document.documentElement.classList.add('js');
 (() => {
   const az = matchMedia('(prefers-reduced-motion: reduce)').matches; if (az) return;
   const io = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { if (v.preload !== 'auto') { v.preload = 'auto'; v.load(); } v.play().catch(() => {}); } else v.pause(); }), { threshold: .2 });
-  document.querySelectorAll('.saha video').forEach(v => { v.muted = true; io.observe(v); });
+  document.querySelectorAll('.saha video, .hk-video video, .ziyaret video').forEach(v => { v.muted = true; io.observe(v); });
 })();

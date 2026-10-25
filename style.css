@@ -405,3 +405,32 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .saha-k figcaption{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;color:var(--kul);font:400 19px/1.2 var(--serif)}
 .saha-k figcaption span{display:block;font:600 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--bordo-ac);margin-bottom:6px}
 @media (max-width:860px){.saha{grid-template-columns:1fr 1fr}}
+/* Büyük logo ve menü */
+.ust .kap{height:84px}
+.logo-kutu{height:48px}
+.alt .logo-kutu{height:62px}
+.menu{gap:30px}
+.menu a{font-size:16.5px;font-weight:500;letter-spacing:.005em}
+.dil{font-size:13.5px;padding:9px 12px}
+.ust .dugme{padding:13px 20px;font-size:15.5px}
+@media (max-width:1180px){.menu{gap:20px}.menu a{font-size:15.5px}}
+@media (max-width:980px){.ust .kap{height:72px}.menu{top:72px}.menu a{font-size:18px}.logo-kutu{height:40px}}
+@media (max-width:560px){.logo-kutu{height:36px}}
+.halka-sahne{top:104px}.ates-gorsel,.yesil-gorsel{top:108px}
+@media (max-width:860px){.halka-sahne{top:72px}}
+/* Sahadan 6'lı */
+.saha{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.saha{grid-template-columns:1fr 1fr}}
+/* Hikâye içi video */
+.hk-video{margin:8px 0 clamp(36px,4vw,56px);border-radius:18px;overflow:hidden;position:relative;background:var(--is)}
+.hk-video video{width:100%;aspect-ratio:720/340;object-fit:cover;display:block}
+.hk-video figcaption{position:absolute;left:16px;bottom:14px;padding:8px 14px;border-radius:999px;background:rgba(22,17,14,.6);backdrop-filter:blur(8px);color:var(--kul);font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+/* Ziyaretler */
+.zi-b{background:var(--kul2)}
+.ziyaret{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:clamp(10px,1.4vw,18px)}
+.zi-k{margin:0;border-radius:16px;overflow:hidden;background:var(--is);aspect-ratio:1/1}
+.zi-k img,.zi-k video{width:100%;height:100%;object-fit:cover;display:block}
+.zi-buyuk{grid-row:1/3;aspect-ratio:auto}
+.zi-genis{grid-column:2/4;aspect-ratio:auto;height:100%}
+.zi-alt{margin-top:16px;font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--soluk)}
+@media (max-width:760px){.ziyaret{grid-template-columns:1fr 1fr}.zi-buyuk{grid-row:auto;grid-column:1/3;aspect-ratio:4/3}.zi-genis{grid-column:1/3;aspect-ratio:16/10}}
