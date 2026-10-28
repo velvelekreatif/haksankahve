@@ -758,3 +758,18 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .giris-tam .bant-p{max-width:56ch}
 .giris-tam .kahraman-dugmeler{margin-top:32px}
 .giris-tam .dugme.cizgi{color:var(--kul);border-color:rgba(244,239,231,.5)}
+
+/* Ana sayfa film şeridi: kaydırma noktaları ve oklar */
+.film-alt{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:32px}
+.film-nokta{display:flex;align-items:center;gap:2px}
+.film-nokta button{position:relative;width:22px;height:26px;border:0;padding:0;background:none;cursor:pointer;transition:width .35s cubic-bezier(.2,.8,.2,1)}
+.film-nokta button::before{content:"";position:absolute;left:6px;right:6px;top:50%;height:10px;margin-top:-5px;border-radius:99px;background:var(--c);opacity:.45;transition:opacity .35s}
+.film-nokta button:hover::before{opacity:.7}
+.film-nokta button.on{width:44px}
+.film-nokta button.on::before{opacity:1}
+.film-nokta button:focus-visible{outline:2px solid var(--kul);outline-offset:2px;border-radius:99px}
+.film-ok{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(246,241,233,.28);background:transparent;color:var(--kul);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s,opacity .3s}
+.film-ok svg{width:16px;height:16px}
+.film-ok:hover{background:rgba(246,241,233,.08)}
+.film-ok[disabled]{opacity:.25;cursor:default}
+@media (max-width:700px){.film-ok{display:none}.film-alt{margin-top:24px}}

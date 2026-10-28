@@ -164,3 +164,25 @@ document.documentElement.classList.add('js');
     c.addEventListener('mouseleave',function(){nok.forEach(function(n){n.classList.remove('aktif');});});
   });
 })();
+
+/* Ana sayfa film şeridi: yana kaydırma noktaları ve oklar */
+(function(){
+  var f=document.querySelector('ol.film'); if(!f) return;
+  var li=[].slice.call(f.children), d=[].slice.call(document.querySelectorAll('.film-nokta button')), ok=[].slice.call(document.querySelectorAll('.film-ok'));
+  if(li.length<2) return;
+  function adim(){return li[1].offsetLeft-li[0].offsetLeft;}
+  function sonda(){return f.scrollLeft+f.clientWidth>=f.scrollWidth-4;}
+  function aktif(){
+    var i=sonda()?li.length-1:Math.round(f.scrollLeft/adim());
+    d.forEach(function(b,k){b.classList.toggle('on',k===i); if(k===i) b.setAttribute('aria-current','true'); else b.removeAttribute('aria-current');});
+    if(ok[0]) ok[0].disabled=f.scrollLeft<=4; if(ok[1]) ok[1].disabled=sonda();
+  }
+  function git(i){i=Math.max(0,Math.min(li.length-1,i)); f.scrollTo({left:li[i].offsetLeft-li[0].offsetLeft,behavior:'smooth'});}
+  d.forEach(function(b,k){b.addEventListener('click',function(){git(k);});});
+  ok.forEach(function(b){b.addEventListener('click',function(){
+    var a=adim(), n=Math.max(1,Math.floor(f.clientWidth/a)-1);
+    git(Math.round(f.scrollLeft/a)+(+b.getAttribute('data-yon'))*n);
+  });});
+  var bek=false; f.addEventListener('scroll',function(){if(bek) return; bek=true; requestAnimationFrame(function(){bek=false; aktif();});},{passive:true});
+  window.addEventListener('resize',aktif); aktif();
+})();
